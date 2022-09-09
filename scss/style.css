@@ -1,42 +1,109 @@
-@import "nullstyle.scss";
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
 
 body {
   font-family: Montserrat;
   font-size: 12px;
 }
+
 .wrapper {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
+
 .__container {
   max-width: 1087px;
   margin: 0 auto;
   padding: 0px 15px;
 }
-// pc*******************************
+
 @media (max-width: 1087px) {
   .__container {
     max-width: 970px;
   }
 }
-// tablet**********************************
 @media (max-width: 992px) {
   .__container {
     max-width: 750px;
   }
 }
-// mobile************************************
 @media (max-width: 767.98px) {
   .__container {
     max-width: none;
   }
 }
-// small mobile*********************************
-@media (max-width: 479.98px) {
-}
-// header*********************************************
 .header {
   position: absolute;
   width: 100%;
@@ -44,6 +111,7 @@ body {
   left: 0;
   z-index: 55;
 }
+
 .header__container {
   display: flex;
   min-height: 114px;
@@ -51,12 +119,14 @@ body {
 }
 
 .header__logo {
-    position: relative;
-    z-index: 5;
+  position: relative;
+  z-index: 5;
 }
+
 .header__menu {
   flex: 1 1 auto;
 }
+
 .header__button {
   flex: 0 0 252px;
   display: flex;
@@ -71,12 +141,14 @@ body {
   display: flex;
   justify-content: end;
 }
+
 .menu__list {
   display: flex;
   text-align: center;
   align-items: center;
   text-transform: uppercase;
 }
+
 .menu__item {
   margin: 0px 40px 0px 0px;
 }
@@ -89,11 +161,11 @@ body {
   letter-spacing: 0.14em;
   color: #000000;
   transition: color 0.2s linear;
-  &:hover{
-    color: #ec5863;
-  }
 }
-// модификатор всех кнопок сайта
+.menu__link:hover {
+  color: #ec5863;
+}
+
 .button {
   color: #fcfdfe;
   font-weight: 800;
@@ -106,17 +178,19 @@ body {
   text-transform: uppercase;
   display: inline-block;
   transition: background-color 0.2s ease 0s;
-  &:hover {
-    background-color: #f37b83;
-    color: #fff;
-  }
 }
+.button:hover {
+  background-color: #f37b83;
+  color: #fff;
+}
+
 .button_blue {
   background-color: #4285f4;
-  &:hover {
-    background-color: #6799e9;
-  }
 }
+.button_blue:hover {
+  background-color: #6799e9;
+}
+
 @media (max-width: 992px) {
   .menu__item {
     margin: 0px 30px 0px 0px;
@@ -137,11 +211,10 @@ body {
     height: 100%;
     background-color: #d9c6c6;
     padding: 90px 15px 30px 15px;
-&:target{
-    left: 0;
-}
   }
-
+  .menu__body:target {
+    left: 0;
+  }
   .menu__list {
     flex-direction: column;
     justify-content: center;
@@ -150,16 +223,15 @@ body {
   .menu__link {
     color: #ec5863;
     font-size: 20px;
-
-    &:hover{
-        color: #fff;
-    }
   }
-  .menu__item{
+  .menu__link:hover {
+    color: #fff;
+  }
+  .menu__item {
     margin: 0px 0px 25px 0px;
-    &:last-child{
-        margin-bottom: 0px; 
-    }
+  }
+  .menu__item:last-child {
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 479.98px) {
@@ -170,7 +242,9 @@ body {
 }
 .icon-menu {
   display: none;
-  @media (max-width: 768.98px) {
+}
+@media (max-width: 768.98px) {
+  .icon-menu {
     position: relative;
     margin: 0px 0px 0px 20px;
     flex: 0 0 30px;
@@ -178,14 +252,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    &::before,
-    &::after {
-      content: "";
-      background-color: #000;
-      height: 2px;
-    }
+  }
+  .icon-menu::before, .icon-menu::after {
+    content: "";
+    background-color: #000;
+    height: 2px;
   }
 }
+
 .icon-menu span {
   height: 2px;
   background-color: #000;

@@ -7,6 +7,7 @@
 }
 
 *, *:before, *:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -78,8 +79,13 @@ body {
 
 .wrapper {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100%;
 }
 
@@ -113,9 +119,13 @@ body {
 }
 
 .header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 114px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__logo {
@@ -124,28 +134,46 @@ body {
 }
 
 .header__menu {
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .header__button {
-  flex: 0 0 252px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 252px;
+          flex: 0 0 252px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   text-transform: uppercase;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   z-index: 5;
 }
 
 .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-align: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-transform: uppercase;
 }
 
@@ -160,6 +188,7 @@ body {
   line-height: 1.2;
   letter-spacing: 0.14em;
   color: #000000;
+  -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
 .menu__link:hover {
@@ -169,7 +198,7 @@ body {
 .button {
   color: #fcfdfe;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.5;
   font-size: 10 px;
   letter-spacing: 1px;
   padding: 14px 30px;
@@ -177,6 +206,7 @@ body {
   background-color: #ec5863;
   text-transform: uppercase;
   display: inline-block;
+  -webkit-transition: background-color 0.2s ease 0s;
   transition: background-color 0.2s ease 0s;
 }
 .button:hover {
@@ -195,11 +225,15 @@ body {
   .menu__item {
     margin: 0px 30px 0px 0px;
   }
+
   .header__container {
     min-height: 80px;
   }
+
   .header__button {
-    flex: 0 0 170px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 170px;
+            flex: 0 0 170px;
   }
 }
 @media (max-width: 767.98px) {
@@ -215,11 +249,20 @@ body {
   .menu__body:target {
     left: 0;
   }
+
   .menu__list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
+
   .menu__link {
     color: #ec5863;
     font-size: 20px;
@@ -227,6 +270,7 @@ body {
   .menu__link:hover {
     color: #fff;
   }
+
   .menu__item {
     margin: 0px 0px 25px 0px;
   }
@@ -236,7 +280,9 @@ body {
 }
 @media (max-width: 479.98px) {
   .header__logo {
-    flex: 0 0 40px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40px;
+            flex: 0 0 40px;
     overflow: hidden;
   }
 }
@@ -247,11 +293,20 @@ body {
   .icon-menu {
     position: relative;
     margin: 0px 0px 0px 20px;
-    flex: 0 0 30px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30px;
+            flex: 0 0 30px;
     height: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .icon-menu::before, .icon-menu::after {
     content: "";
@@ -262,5 +317,5 @@ body {
 
 .icon-menu span {
   height: 2px;
-  background-color: #000;
+  background-color: rgb(212, 75, 75);
 }
